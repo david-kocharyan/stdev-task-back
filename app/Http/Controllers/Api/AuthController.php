@@ -197,7 +197,7 @@ class AuthController extends Controller
             return ResponseHelper::fail("User not Found", ResponseHelper::UNPROCESSABLE_ENTITY_EXPLAINED);
         }
 
-        echo $user->token();
+        echo $user->token()->accessToken;
 
     }
 
