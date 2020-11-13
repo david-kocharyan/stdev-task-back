@@ -42,5 +42,5 @@ Route::group(['namespace' => 'Api', "prefix" => "v1"], function () {
     });
 
     Route::get('get-all-categories', 'CategoryController@index');
-    Route::get('check-auth', 'AuthController@checkAuth');
+    Route::post('check-auth', 'AuthController@checkAuth');
 });
