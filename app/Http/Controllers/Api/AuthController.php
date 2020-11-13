@@ -194,7 +194,7 @@ class AuthController extends Controller
 
         $user_token = Auth::guard('api')->user();
 
-        dd($data['token'], $user_token);
+        dd($data['token'], $user_token, $user_token->token());
     }
 
 }
