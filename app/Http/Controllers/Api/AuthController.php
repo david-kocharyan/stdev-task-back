@@ -192,10 +192,10 @@ class AuthController extends Controller
     {
         $user = Auth::guard('api')->user();
         if ($user == null){
-            return ResponseHelper::fail("False", ResponseHelper::UNAUTHORIZED);
+            return ResponseHelper::fail("false", ResponseHelper::UNAUTHORIZED);
         }
         else{
-            return ResponseHelper::success("True", ResponseHelper::OK);
+            return ResponseHelper::success(array(),false, true);
         }
     }
 
