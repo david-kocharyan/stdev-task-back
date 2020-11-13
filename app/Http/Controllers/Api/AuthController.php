@@ -192,7 +192,7 @@ class AuthController extends Controller
     {
         $data = json_decode($request->getContent(), true);
 
-        $user_token = Auth::guard('api')->user()->token();
+        $user_token = Auth::guard('api')->user();
 
         dd($data['token'], $user_token);
     }
