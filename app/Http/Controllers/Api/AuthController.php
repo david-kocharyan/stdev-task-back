@@ -190,15 +190,13 @@ class AuthController extends Controller
      */
     public function checkAuth(Request $request)
     {
-        $data = json_decode($request->getContent(), true);
         $user = Auth::guard('api')->user();
-
         if ($user == null){
-            return ResponseHelper::fail("User not Found", ResponseHelper::UNPROCESSABLE_ENTITY_EXPLAINED);
+            return ResponseHelper::fail("False", ResponseHelper::UNAUTHORIZED);
         }
-
-        echo $user->token()->accessToken;
-
+        else{
+            return ResponseHelper::success("True", ResponseHelper::OK);
+        }
     }
 
 }
