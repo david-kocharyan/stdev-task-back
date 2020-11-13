@@ -185,4 +185,16 @@ class AuthController extends Controller
         return ResponseHelper::success(array(), false, "Your Password Changed Successfully!");
     }
 
+    /**
+     * @param Request $request
+     */
+    public function checkAuth(Request $request)
+    {
+        $data = json_decode($request->getContent(), true);
+
+        $user_token = Auth::guard('api')->user()->token();
+
+        dd($data['token'], $user_token);
+    }
+
 }
