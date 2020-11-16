@@ -19,6 +19,8 @@ use Illuminate\Support\Facades\Route;
 //});
 
 Route::group(['namespace' => 'Api', "prefix" => "v1"], function () {
+    Route::post('check-auth', 'AuthController@checkAuth');
+    Route::get('get-all-categories', 'CategoryController@index');
 
     Route::group(['prefix' => 'user'], function () {
         Route::post('sign-up', 'AuthController@signup');
@@ -41,6 +43,4 @@ Route::group(['namespace' => 'Api', "prefix" => "v1"], function () {
         Route::post('add-comment', 'CommentController@store');
     });
 
-    Route::get('get-all-categories', 'CategoryController@index');
-    Route::post('check-auth', 'AuthController@checkAuth');
 });
