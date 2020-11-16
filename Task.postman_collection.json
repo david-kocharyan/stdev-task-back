@@ -1,0 +1,585 @@
+{
+	"info": {
+		"_postman_id": "0bcd4b6e-61ed-4633-98bc-c84a84fe108c",
+		"name": "Task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Sign Up",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nickname\": \"David Kocharyan\",\r\n    \"email\": \"david@gmail.com\",\r\n    \"password\": \"123456789\",\r\n    \"confirm_password\": \"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://admin.davidkocharyan.com/api/v1/user/sign-up",
+							"protocol": "https",
+							"host": [
+								"admin",
+								"davidkocharyan",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"sign-up"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign In",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"david@gmail.com\",\r\n    \"password\": \"123456789\"\r\n}"
+						},
+						"url": {
+							"raw": "https://admin.davidkocharyan.com/api/v1/user/sign-in",
+							"protocol": "https",
+							"host": [
+								"admin",
+								"davidkocharyan",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"sign-in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Log Out",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMmMwNzY3ZmMyMTU4NzRiZWRhMjQ5MDEyZjBjNzVlZjk0ZjZlN2QwY2IxN2JkNDkzODk2MWQyZDBlYzViNDI1NDgyYmQwNjlmMzU3ZDdhMjQiLCJpYXQiOjE1OTk0OTY3MDMsIm5iZiI6MTU5OTQ5NjcwMywiZXhwIjoxNjMxMDMyNzAzLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.Q6XvuGObXh54M8Hfzu_z61UDwLTxCA8wdh77ImXNTNKfB4XkoVXYeOjaoFWF1CROEKk3PsBbqi3aWXWGiTTMUcuY0f85QkvMN1tEt4qC8890-k-WD0CgUnu-7WS4c2f-XDg2GbUYAtivy622gm2LOhx55fTj0pT_M2HuRgx7Erqz77rp0qj-UYLkY-a9shuT3Wzh3mp8E9JdcBMT9ZIS-pkTvriavxKMCdLtdjOovITPTPsPP20ZIS-Pa_zgpKgWqlDYGTOWsMlWR9RF6H0zyV6R9mY3JJMuFcUwNrl1zb48Kc9mBUIGk5mLWEI4ozj52nWz9_8dJZDcIInm9CGx4i1YtJpDNyV6xdSQsSthL5vU2NaX9E1z6fOV90eslVvzXlXXNmuWJPNLku5DPzU6i2S6rMvo5Zf93OjnBy3ssiHQwJ9ACDnoMzdBIwaOCJ3TJh3NGIxHBeV2eZ0QmcEirmBComrWdfT0OxjwGWwIU9I-jG-7OP_-kZBiPjrYenw4tBRU9hDWbps2_si-oqSMnE1vVOv97bOFUfwzT198KvMJGtAwVlMT9rW_l3wzd_PQH6UY9gFFSX5mHH1bgbekoorfSXEsSeFm7IBL9S6o9G3OovZrdA7hYv58YeyK0dDtH3ZTsSmaVSMwEFGwgcSfROB4tyld_wAYK2zs8YkTJ_o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://admin.davidkocharyan.com/api/v1/user/logout",
+							"protocol": "https",
+							"host": [
+								"admin",
+								"davidkocharyan",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMjQ1NzZhNzBjYzQ5NzVhN2RjMmM5NmNmNGM4YWI1NTcyZjU2MTk4NDRjZDAxNTY2NTkwNTc2NjRlYzgyZjRmMTNhODVlNWU4NzIyODViNGIiLCJpYXQiOjE2MDUyNjI2NzksIm5iZiI6MTYwNTI2MjY3OSwiZXhwIjoxNjM2Nzk4Njc5LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.a7tFsvlS0fB-758TZkwdvRsXR__8SapSu70FQOZGmrLaZ9sX9SqW8H87mYO6kJAt3IEBtfuaKSZIqsUD6ZnH8pLiZYw2UH0Uiq8QqBcDh2envoOa1BGw5K94f24QekPg50HNlVhMLuKnCl7dof29gUmOSALAnZpiSf0VLlxIyONjf6168TFV4yYeGGsVuYCWXAcXmgh_RrifsaMvAcAErRl_RSybgjTPInS8GGgAShmUyLbekKPgd3Vk-hAK8fRfMMMt-Z6UAbNS92qewZs2RMvfOmuVX-37r9wtIY-UhFdVMoOuCTIhQju3j8Nt_-owO5J1LR9AAstM4m_6gWC51a9pG98b77hXSVbJy6yItVv5bvGXcZmIEyLKq4xsuL_Argg-zIR3gFb2e8ccSfDfHsg18cPI3r2p26kZX-bDCnfouvTOxCITAD35DD8VAPpsgY9BrrhI2Ey5WpfoArfB_OG3otDYIPNpmb2_G6889cQtUcmFQFXX86EI33yY2x4elEagzLLw8LroEIp41qUKVGLNWDFjzpsFOMXvlzFhmlb26jQMrlWNLChkHT5JL0izeqHHdwI7s3P0XYGxjhRSjO33LkULW7W8pUgO06sRIqXZthCXdgwpDVyG617muz3XlNks_-QTj5-sGwnrGPPUTNbzBWRGKcOIGmerGT7uiqQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/v1/user/get-user",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"get-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMjQ1NzZhNzBjYzQ5NzVhN2RjMmM5NmNmNGM4YWI1NTcyZjU2MTk4NDRjZDAxNTY2NTkwNTc2NjRlYzgyZjRmMTNhODVlNWU4NzIyODViNGIiLCJpYXQiOjE2MDUyNjI2NzksIm5iZiI6MTYwNTI2MjY3OSwiZXhwIjoxNjM2Nzk4Njc5LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.a7tFsvlS0fB-758TZkwdvRsXR__8SapSu70FQOZGmrLaZ9sX9SqW8H87mYO6kJAt3IEBtfuaKSZIqsUD6ZnH8pLiZYw2UH0Uiq8QqBcDh2envoOa1BGw5K94f24QekPg50HNlVhMLuKnCl7dof29gUmOSALAnZpiSf0VLlxIyONjf6168TFV4yYeGGsVuYCWXAcXmgh_RrifsaMvAcAErRl_RSybgjTPInS8GGgAShmUyLbekKPgd3Vk-hAK8fRfMMMt-Z6UAbNS92qewZs2RMvfOmuVX-37r9wtIY-UhFdVMoOuCTIhQju3j8Nt_-owO5J1LR9AAstM4m_6gWC51a9pG98b77hXSVbJy6yItVv5bvGXcZmIEyLKq4xsuL_Argg-zIR3gFb2e8ccSfDfHsg18cPI3r2p26kZX-bDCnfouvTOxCITAD35DD8VAPpsgY9BrrhI2Ey5WpfoArfB_OG3otDYIPNpmb2_G6889cQtUcmFQFXX86EI33yY2x4elEagzLLw8LroEIp41qUKVGLNWDFjzpsFOMXvlzFhmlb26jQMrlWNLChkHT5JL0izeqHHdwI7s3P0XYGxjhRSjO33LkULW7W8pUgO06sRIqXZthCXdgwpDVyG617muz3XlNks_-QTj5-sGwnrGPPUTNbzBWRGKcOIGmerGT7uiqQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nickname\": \"David Kocharyan 12\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://admin.davidkocharyan.com/api/v1/user/edit",
+							"protocol": "https",
+							"host": [
+								"admin",
+								"davidkocharyan",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMjQ1NzZhNzBjYzQ5NzVhN2RjMmM5NmNmNGM4YWI1NTcyZjU2MTk4NDRjZDAxNTY2NTkwNTc2NjRlYzgyZjRmMTNhODVlNWU4NzIyODViNGIiLCJpYXQiOjE2MDUyNjI2NzksIm5iZiI6MTYwNTI2MjY3OSwiZXhwIjoxNjM2Nzk4Njc5LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.a7tFsvlS0fB-758TZkwdvRsXR__8SapSu70FQOZGmrLaZ9sX9SqW8H87mYO6kJAt3IEBtfuaKSZIqsUD6ZnH8pLiZYw2UH0Uiq8QqBcDh2envoOa1BGw5K94f24QekPg50HNlVhMLuKnCl7dof29gUmOSALAnZpiSf0VLlxIyONjf6168TFV4yYeGGsVuYCWXAcXmgh_RrifsaMvAcAErRl_RSybgjTPInS8GGgAShmUyLbekKPgd3Vk-hAK8fRfMMMt-Z6UAbNS92qewZs2RMvfOmuVX-37r9wtIY-UhFdVMoOuCTIhQju3j8Nt_-owO5J1LR9AAstM4m_6gWC51a9pG98b77hXSVbJy6yItVv5bvGXcZmIEyLKq4xsuL_Argg-zIR3gFb2e8ccSfDfHsg18cPI3r2p26kZX-bDCnfouvTOxCITAD35DD8VAPpsgY9BrrhI2Ey5WpfoArfB_OG3otDYIPNpmb2_G6889cQtUcmFQFXX86EI33yY2x4elEagzLLw8LroEIp41qUKVGLNWDFjzpsFOMXvlzFhmlb26jQMrlWNLChkHT5JL0izeqHHdwI7s3P0XYGxjhRSjO33LkULW7W8pUgO06sRIqXZthCXdgwpDVyG617muz3XlNks_-QTj5-sGwnrGPPUTNbzBWRGKcOIGmerGT7uiqQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"current_password\":\"123456789\",\r\n    \"password\":\"1234567\",\r\n    \"password_confirmation\":\"1234567\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://admin.davidkocharyan.com/api/v1/user/change-password",
+							"protocol": "https",
+							"host": [
+								"admin",
+								"davidkocharyan",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"change-password"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Create Article",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMGY1YmE1Nzg5MTQ5YzBlODY3NTI5MDI5YmQ5MzFlMTg0NzE2NDhmMWFkM2ZjZjgxMmExOWExOGUzMjE4NjkxZjYxZTVlZmIwYzhiZDU3ZTAiLCJpYXQiOjE2MDU1MTY4NzAsIm5iZiI6MTYwNTUxNjg3MCwiZXhwIjoxNjM3MDUyODcwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QPtshFscgxmH--QSJrkuvDXLE0PYw9-UAbc9dIj4klOGdTB8crv-ASbU7A8f1Ir4e4vMoyzvc6AHcIkcOIJNEJ1of-9Q3XC3Nng2hAnuZ8hqBnNwnE_2FcNigWpX1LUIlO5ZMjkyl04_ZMFu-jXsQIyHZFwsGmdqOIuuEK0NXWM6y3954Moj68UdaO1B2f3Mh3XJWbT8vAnBomxNlwSwdsC4TtYJO8H0gTzuVFJGJjLb9-M-GLf2txoKmcFD_i_l-luzj51VxDacFx05y6hySK8pPlWS3yGkEcns3Z6kGr8vP-CjemcWuPv0mt3DHNOgFMW3NLzI6Uu0ai8o6Ks4UN07P5yN3iL-ZtWPxao3QjvmrhOM0zPYzcDzX4UHtAv6iupp5lm5rBjbzHsVXsu6XpBH2cPmfe0dXY6xeDODmz0Fmnm1uIvYTFw4sYn-8gDlalDVgvWQmjQB8KMhnxHUi-65speDmz-T8X1VFX_sgWH7EbbLXRJOncwbJHcb-K1kAZUY_GdDFDO3fxw9vaSV7lHWap25t63mgozzKjhTci9iposdECGBXspYlu3ZPbDY4di92g6cdcwG03hTg0fNqmYKHesz3HkUT0LakKW1KxBzUYjr_XK11AIDTu91tUa1kXGrf0HIH-zSmMsA9iNVFElsAJq1qsas1ZqOG0XLVAg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"category_id\": \"4\",\r\n    \"title\": \"string\",\r\n    \"text\": \"text\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://admin.davidkocharyan.com/api/v1/create-article",
+					"protocol": "https",
+					"host": [
+						"admin",
+						"davidkocharyan",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"create-article"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Category",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://admin.davidkocharyan.com/api/v1/get-all-categories",
+					"protocol": "https",
+					"host": [
+						"admin",
+						"davidkocharyan",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"get-all-categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Articles",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMjQ1NzZhNzBjYzQ5NzVhN2RjMmM5NmNmNGM4YWI1NTcyZjU2MTk4NDRjZDAxNTY2NTkwNTc2NjRlYzgyZjRmMTNhODVlNWU4NzIyODViNGIiLCJpYXQiOjE2MDUyNjI2NzksIm5iZiI6MTYwNTI2MjY3OSwiZXhwIjoxNjM2Nzk4Njc5LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.a7tFsvlS0fB-758TZkwdvRsXR__8SapSu70FQOZGmrLaZ9sX9SqW8H87mYO6kJAt3IEBtfuaKSZIqsUD6ZnH8pLiZYw2UH0Uiq8QqBcDh2envoOa1BGw5K94f24QekPg50HNlVhMLuKnCl7dof29gUmOSALAnZpiSf0VLlxIyONjf6168TFV4yYeGGsVuYCWXAcXmgh_RrifsaMvAcAErRl_RSybgjTPInS8GGgAShmUyLbekKPgd3Vk-hAK8fRfMMMt-Z6UAbNS92qewZs2RMvfOmuVX-37r9wtIY-UhFdVMoOuCTIhQju3j8Nt_-owO5J1LR9AAstM4m_6gWC51a9pG98b77hXSVbJy6yItVv5bvGXcZmIEyLKq4xsuL_Argg-zIR3gFb2e8ccSfDfHsg18cPI3r2p26kZX-bDCnfouvTOxCITAD35DD8VAPpsgY9BrrhI2Ey5WpfoArfB_OG3otDYIPNpmb2_G6889cQtUcmFQFXX86EI33yY2x4elEagzLLw8LroEIp41qUKVGLNWDFjzpsFOMXvlzFhmlb26jQMrlWNLChkHT5JL0izeqHHdwI7s3P0XYGxjhRSjO33LkULW7W8pUgO06sRIqXZthCXdgwpDVyG617muz3XlNks_-QTj5-sGwnrGPPUTNbzBWRGKcOIGmerGT7uiqQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://admin.davidkocharyan.com/api/v1/get-all-article?limit=10&page=1",
+					"protocol": "https",
+					"host": [
+						"admin",
+						"davidkocharyan",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"get-all-article"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "10"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get One Article",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMjQ1NzZhNzBjYzQ5NzVhN2RjMmM5NmNmNGM4YWI1NTcyZjU2MTk4NDRjZDAxNTY2NTkwNTc2NjRlYzgyZjRmMTNhODVlNWU4NzIyODViNGIiLCJpYXQiOjE2MDUyNjI2NzksIm5iZiI6MTYwNTI2MjY3OSwiZXhwIjoxNjM2Nzk4Njc5LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.a7tFsvlS0fB-758TZkwdvRsXR__8SapSu70FQOZGmrLaZ9sX9SqW8H87mYO6kJAt3IEBtfuaKSZIqsUD6ZnH8pLiZYw2UH0Uiq8QqBcDh2envoOa1BGw5K94f24QekPg50HNlVhMLuKnCl7dof29gUmOSALAnZpiSf0VLlxIyONjf6168TFV4yYeGGsVuYCWXAcXmgh_RrifsaMvAcAErRl_RSybgjTPInS8GGgAShmUyLbekKPgd3Vk-hAK8fRfMMMt-Z6UAbNS92qewZs2RMvfOmuVX-37r9wtIY-UhFdVMoOuCTIhQju3j8Nt_-owO5J1LR9AAstM4m_6gWC51a9pG98b77hXSVbJy6yItVv5bvGXcZmIEyLKq4xsuL_Argg-zIR3gFb2e8ccSfDfHsg18cPI3r2p26kZX-bDCnfouvTOxCITAD35DD8VAPpsgY9BrrhI2Ey5WpfoArfB_OG3otDYIPNpmb2_G6889cQtUcmFQFXX86EI33yY2x4elEagzLLw8LroEIp41qUKVGLNWDFjzpsFOMXvlzFhmlb26jQMrlWNLChkHT5JL0izeqHHdwI7s3P0XYGxjhRSjO33LkULW7W8pUgO06sRIqXZthCXdgwpDVyG617muz3XlNks_-QTj5-sGwnrGPPUTNbzBWRGKcOIGmerGT7uiqQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://admin.davidkocharyan.com/api/v1/get-article?article=2",
+					"protocol": "https",
+					"host": [
+						"admin",
+						"davidkocharyan",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"get-article"
+					],
+					"query": [
+						{
+							"key": "article",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get 5 Coments",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QisLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMjQ1NzZhNzBjYzQ5NzVhN2RjMmM5NmNmNGM4YWI1NTcyZjU2MTk4NDRjZDAxNTY2NTkwNTc2NjRlYzgyZjRmMTNhODVlNWU4NzIyODViNGIiLCJpYXQiOjE2MDUyNjI2NzksIm5iZiI6MTYwNTI2MjY3OSwiZXhwIjoxNjM2Nzk4Njc5LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.a7tFsvlS0fB-758TZkwdvRsXR__8SapSu70FQOZGmrLaZ9sX9SqW8H87mYO6kJAt3IEBtfuaKSZIqsUD6ZnH8pLiZYw2UH0Uiq8QqBcDh2envoOa1BGw5K94f24QekPg50HNlVhMLuKnCl7dof29gUmOSALAnZpiSf0VLlxIyONjf6168TFV4yYeGGsVuYCWXAcXmgh_RrifsaMvAcAErRl_RSybgjTPInS8GGgAShmUyLbekKPgd3Vk-hAK8fRfMMMt-Z6UAbNS92qewZs2RMvfOmuVX-37r9wtIY-UhFdVMoOuCTIhQju3j8Nt_-owO5J1LR9AAstM4m_6gWC51a9pG98b77hXSVbJy6yItVv5bvGXcZmIEyLKq4xsuL_Argg-zIR3gFb2e8ccSfDfHsg18cPI3r2p26kZX-bDCnfouvTOxCITAD35DD8VAPpsgY9BrrhI2Ey5WpfoArfB_OG3otDYIPNpmb2_G6889cQtUcmFQFXX86EI33yY2x4elEagzLLw8LroEIp41qUKVGLNWDFjzpsFOMXvlzFhmlb26jQMrlWNLChkHT5JL0izeqHHdwI7s3P0XYGxjhRSjO33LkULW7W8pUgO06sRIqXZthCXdgwpDVyG617muz3XlNks_-QTj5-sGwnrGPPUTNbzBWRGKcOIGmerGT7uiqQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://admin.davidkocharyan.com/api/v1/get-comments?article=2",
+					"protocol": "https",
+					"host": [
+						"admin",
+						"davidkocharyan",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"get-comments"
+					],
+					"query": [
+						{
+							"key": "article",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add New Coments",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMjQ1NzZhNzBjYzQ5NzVhN2RjMmM5NmNmNGM4YWI1NTcyZjU2MTk4NDRjZDAxNTY2NTkwNTc2NjRlYzgyZjRmMTNhODVlNWU4NzIyODViNGIiLCJpYXQiOjE2MDUyNjI2NzksIm5iZiI6MTYwNTI2MjY3OSwiZXhwIjoxNjM2Nzk4Njc5LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.a7tFsvlS0fB-758TZkwdvRsXR__8SapSu70FQOZGmrLaZ9sX9SqW8H87mYO6kJAt3IEBtfuaKSZIqsUD6ZnH8pLiZYw2UH0Uiq8QqBcDh2envoOa1BGw5K94f24QekPg50HNlVhMLuKnCl7dof29gUmOSALAnZpiSf0VLlxIyONjf6168TFV4yYeGGsVuYCWXAcXmgh_RrifsaMvAcAErRl_RSybgjTPInS8GGgAShmUyLbekKPgd3Vk-hAK8fRfMMMt-Z6UAbNS92qewZs2RMvfOmuVX-37r9wtIY-UhFdVMoOuCTIhQju3j8Nt_-owO5J1LR9AAstM4m_6gWC51a9pG98b77hXSVbJy6yItVv5bvGXcZmIEyLKq4xsuL_Argg-zIR3gFb2e8ccSfDfHsg18cPI3r2p26kZX-bDCnfouvTOxCITAD35DD8VAPpsgY9BrrhI2Ey5WpfoArfB_OG3otDYIPNpmb2_G6889cQtUcmFQFXX86EI33yY2x4elEagzLLw8LroEIp41qUKVGLNWDFjzpsFOMXvlzFhmlb26jQMrlWNLChkHT5JL0izeqHHdwI7s3P0XYGxjhRSjO33LkULW7W8pUgO06sRIqXZthCXdgwpDVyG617muz3XlNks_-QTj5-sGwnrGPPUTNbzBWRGKcOIGmerGT7uiqQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"article_id\":\"2\",\r\n    \"text\":\"string\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://admin.davidkocharyan.com/api/v1/add-comment",
+					"protocol": "https",
+					"host": [
+						"admin",
+						"davidkocharyan",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"add-comment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check Auth",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOsiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYjQzNzUzYjAzZDljYmM5YWFmMDA1YmMyMjNiZTRhNTI2YTYzNTQ2ZWY2ZjlhOWVhNjMyNWQwNTQyOTBjNWI0MjE2Yzk5ZDE1YTAyMDc1NGQiLCJpYXQiOjE2MDUyODE1NDUsIm5iZiI6MTYwNTI4MTU0NSwiZXhwIjoxNjM2ODE3NTQ1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.MFcju5Y5Fe6k0SV2MWneQ8VZcJep8RO2IIijbShVe2RM52jYTgNQy7fNFxL6h0SqedpUbwmzqLSlx7T1uHQyjMJJmYGYPDi-XenVmneGk8QKgepCUulTyXMgfXACEh4p88csSxxDfB6a1P0FhoUxvP2E-424nHSpjmcVtuhVMwQh_76LKZRrg6c0OEdXxpSe6ma8BatgQ_Y6sd3yQYQ4NpthebEEGM83uwze_UMcyaYymYP-qMcWlAmmVeuW8Q86TvHwcCazbVhxwhB-W8DIyxQ7paV6kP-P_Orji-3EBSa-6ysyiYpkQH8eTn3vV63Fq23FfuCDTlcxsSV0WkFpQPvA9OG0u_9KUkJC8Z_GkMnpkLGg8mc8FsIXQZoPfDwopYu6fKZbd307EKG6Z7wqy5pEDA-B6-EcoIIvX5v3dLrNDpBM4opb95dGu_CKXqo8E2lJX_f5W8woEcNZXi62q7FAnf7w0cDTGwjimcYszF0kzVbnIPjkNI4dO0y236vi_2Ci7mYXVKE_mEKBpOGDBe9WqKTDsMGNLXca3-tqbmoW0RD9r80YHB5wP5GHPg3-lUZ6DQIr-41Z3GXOHPnKVgBOzPXI0JlcrS8HuiP8m9fOLMpmN-IFEHwTnBI1lURAxPa2wh7rX_EBht71ULaImAMpI28zKiGwl2PYAtaiOp0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://admin.davidkocharyan.com/api/v1/check-auth",
+					"protocol": "https",
+					"host": [
+						"admin",
+						"davidkocharyan",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"check-auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get articles by category",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMGY1YmE1Nzg5MTQ5YzBlODY3NTI5MDI5YmQ5MzFlMTg0NzE2NDhmMWFkM2ZjZjgxMmExOWExOGUzMjE4NjkxZjYxZTVlZmIwYzhiZDU3ZTAiLCJpYXQiOjE2MDU1MTY4NzAsIm5iZiI6MTYwNTUxNjg3MCwiZXhwIjoxNjM3MDUyODcwLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QPtshFscgxmH--QSJrkuvDXLE0PYw9-UAbc9dIj4klOGdTB8crv-ASbU7A8f1Ir4e4vMoyzvc6AHcIkcOIJNEJ1of-9Q3XC3Nng2hAnuZ8hqBnNwnE_2FcNigWpX1LUIlO5ZMjkyl04_ZMFu-jXsQIyHZFwsGmdqOIuuEK0NXWM6y3954Moj68UdaO1B2f3Mh3XJWbT8vAnBomxNlwSwdsC4TtYJO8H0gTzuVFJGJjLb9-M-GLf2txoKmcFD_i_l-luzj51VxDacFx05y6hySK8pPlWS3yGkEcns3Z6kGr8vP-CjemcWuPv0mt3DHNOgFMW3NLzI6Uu0ai8o6Ks4UN07P5yN3iL-ZtWPxao3QjvmrhOM0zPYzcDzX4UHtAv6iupp5lm5rBjbzHsVXsu6XpBH2cPmfe0dXY6xeDODmz0Fmnm1uIvYTFw4sYn-8gDlalDVgvWQmjQB8KMhnxHUi-65speDmz-T8X1VFX_sgWH7EbbLXRJOncwbJHcb-K1kAZUY_GdDFDO3fxw9vaSV7lHWap25t63mgozzKjhTci9iposdECGBXspYlu3ZPbDY4di92g6cdcwG03hTg0fNqmYKHesz3HkUT0LakKW1KxBzUYjr_XK11AIDTu91tUa1kXGrf0HIH-zSmMsA9iNVFElsAJq1qsas1ZqOG0XLVAg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://admin.davidkocharyan.com/api/v1/get-category-articles?category=4",
+					"protocol": "https",
+					"host": [
+						"admin",
+						"davidkocharyan",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"get-category-articles"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
