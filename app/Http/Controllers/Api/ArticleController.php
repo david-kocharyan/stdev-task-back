@@ -74,7 +74,7 @@ class ArticleController extends Controller
 
     public function articleByCategory(Request $request)
     {
-        if (!is_numeric($request->article)) {
+        if (!is_numeric($request->category)) {
             return ResponseHelper::fail("Please Enter Correct Category Id!", ResponseHelper::UNPROCESSABLE_ENTITY_EXPLAINED);
         }
         $article = Article::with(["user", "category"])->where('category_id', $request->category)->get();
