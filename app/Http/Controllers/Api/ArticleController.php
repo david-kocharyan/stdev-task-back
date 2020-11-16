@@ -74,13 +74,11 @@ class ArticleController extends Controller
 
     public function articleByCategory(Request $request)
     {
+        $limit = !is_numeric($request->limit) ? 10 : $request->limit;
         if (!is_numeric($request->category)) {
             return ResponseHelper::fail("Please Enter Correct Category Id!", ResponseHelper::UNPROCESSABLE_ENTITY_EXPLAINED);
         }
-        $article = Article::with(["user", "category"])->where('category_id', $request->category)->get();
-        $resp = [
-            'article' => $article,
-        ];
-        return ResponseHelper::success($resp, true);
+        $article = Article::with(["user", "category"])->where('category_id', $request->category)->paginate($limit);
+        return ResponseHelper::success($article, true);
     }
 }
