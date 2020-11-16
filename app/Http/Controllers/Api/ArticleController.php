@@ -81,6 +81,6 @@ class ArticleController extends Controller
         $resp = [
             'article' => $article,
         ];
-        return ResponseHelper::success($resp, false);
+        return ResponseHelper::success($resp, true);
     }
 }
