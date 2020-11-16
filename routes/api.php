@@ -38,6 +38,7 @@ Route::group(['namespace' => 'Api', "prefix" => "v1"], function () {
         Route::get('get-all-article', 'ArticleController@index');
         Route::post('create-article', 'ArticleController@store');
         Route::get('get-article', 'ArticleController@getArticle');
+        Route::get('get-category-articles', 'ArticleController@articleByCategory');
 
         Route::get('get-comments', 'CommentController@getComments');
         Route::post('add-comment', 'CommentController@store');
